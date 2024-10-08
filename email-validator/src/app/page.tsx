@@ -17,7 +17,7 @@ export default function Home() {
     setLoading(true);
 
     const email = usernameRef.current?.value || "";
-    const apiKey = "ema_live_PbZ5dNVs3ldhJp14U1Q7Izr2uv1BgLyUTUrw4ie7";
+    const apiKey = process.env.NEXT_PUBLIC_EMAIL_VALIDATION_API_KEY; // using environment variable here
     const url = `https://api.emailvalidation.io/v1/info?apikey=${apiKey}&email=${email}`;
 
     try {
